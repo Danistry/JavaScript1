@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividad 8</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+     function detectarCorreo(correo){
+	let i=0;
+	let name="";
+	let dominio="";
+	let posArroba=0;
+	function tiene1Arroba(correo){
+		let i=0;
+		let contARROBA=0;
+		while(i<correo.length){
+			if("@"==correo[i]){
+				contARROBA++;
+			}
+			i++;
+		}
+		if(contARROBA==1){
+			return(true)
+		}else{
+			return(false)
+		}
+	}
+	if((!tiene1Arroba(correo))||(correo[correo.length-1]==".")){  
+		return('No es un correo electrónico, o el mismo es invalido'); 
+		i=correo.length;
+	}
+	while(i<correo.length){
+		while(correo[i]!="@"){
+			name+=correo[i];
+			i++;
+		}
+		if((correo[i]=="@")&&(name.length>=3)){
+			i++;
+		}else{
+			i=correo.length;
+			return("El name es demasiado corto, debe tener almenos 3 caracteres");
+		}
+		while(i<correo.length){
+			dominio+=correo[i];
+			i++;
+		}
+		if(dominio!=""){
+			let i2=0;
+			if(dominio[2]=="."){
+				return("El comienzo del dominio es demasiado corto, debe tener almenos 3 caracteres");
+			}else if(dominio[dominio.length-2]=="."){
+				return("El fim del dominio es demasiado corto, debe tener almenos 3 caracteres");
+			}
+			while(i2<dominio.length){
+				if((dominio[i2]==".")&&(dominio[i2+1]==".")){
+					return("El correo electrónico es invalido");
+				}
+				i2++;
+			}
+		}
+	}
+	return("El correo esta correctamente escrito");
+}
+console.log(detectarCorreo("danistry_alexander@gmail.com"));
+    </script>
+  </body>
+</html>

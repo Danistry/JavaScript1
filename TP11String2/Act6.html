@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividad 6</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function contarTE(frases) {
+        let i = 0;
+        let temporal = "";
+        let contadorTE = 0;
+
+        while (i < frases.length) {
+          while ((frases[i] != ".") && (i < frases.length)) {
+            temporal += frases[i];
+            i++;
+            //Guardo la oracion en la variable ,antes de llegar a un punto
+          }
+          let i2 = 0;
+          while (i2 < temporal.length) {
+            while (temporal[i2] == " ") {
+              i2++;
+            }
+            while ((temporal[i2] != " ") && (i2 < temporal.length)) 
+            {
+              if (((temporal[i2] == "T") || (temporal[i2] == "t")) &&
+                ((temporal[i2 + 1] == "E") || (temporal[i2 + 1] == "e"))) {
+                contadorTE++;
+              }
+              i2++;
+            }
+          }
+          temporal = "";
+          i++;
+        }
+        return (contadorTE);
+      }
+      console.log(
+        contarTE(
+          "Notaras lo tedioso que es tenerte, Te deseo, tener, la tentacion, te quiero."));
+    </script>
+  </body>
+</html>

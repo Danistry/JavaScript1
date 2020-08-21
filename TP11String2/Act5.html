@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Actividad 5</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div></div>
+    <script type="text/javascript">
+      function fraseAR3(frase) {
+        let i = 0;
+        let s = 0;
+//Quita todo lo que no cumple esta condicion
+        while (i < frase.length && frase[i] != "#") {
+          if (
+            (i == 0 && (frase[i] == "a" || frase[i] == "A")) ||
+            ((frase[i] == "a") && frase[i - 1] == " ")
+          ) {
+            //Almacena todas las palabras que comenzan con A
+            let a = "";
+            while (frase[i] != " " && frase[i] != "#") {
+              a += frase[i];
+              i++;
+            }
+            //calcula la longitud y compara con las palabras que encuentre si 5 iguales a 5 caracteres
+            let idx = a.length;
+            if (idx == 5 && a[idx - 1] == "s") {
+              s++;
+            }
+          }
+          if (i < frase.length) {
+            i++;
+          }
+        }
+        return s;
+      }
+      console.log(
+        "La cantidad de palabras que cumplen la condicion son: " +
+          fraseAR3("Podemos andas amars patinas admiras amas#")
+      );
+    </script>
+  </body>
+</html>

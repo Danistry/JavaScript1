@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Act 3</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div></div>
+    <script type="text/javascript">
+      function palabraA(frase) {
+        let i = 0;
+
+        while (frase[i] != ".") {
+          while (frase[i] == " ") {
+            i++;
+          }
+          let contador = 0;
+          if (frase[i] == "a" || frase[i] == "A") {
+            while (frase[i] != " " && frase[i] != ".") {
+              contador++;
+              i++;
+            }
+          } else {
+            while (frase[i] != " " && frase[i] != ".") {
+              i++;
+            }
+          }
+          var temporal = 0;
+          if (contador > temporal) {
+            temporal = contador;
+          }
+        }
+        return temporal;
+      }
+      console.log(palabraA("la araña, amorosa, amargada, amigable."));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Act 2</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function comprobarFrase(frase, palabraIngresada) {
+        let i = 0;
+        let cantidad = 0;
+
+        while (frase[i] != ".") {
+          while (frase[i] == " ") {
+            i++;
+          }
+          let palabra = "";
+          while (frase[i] != "." && frase[i] == " ") {
+            palabra = palabra + frase[i];
+            i++;
+          }
+          if ((palabra = palabraIngresada)) {
+            cantidad++;
+          }
+          return cantidad;
+        }
+      }
+      var frase = prompt("Ingrese una frase");
+      var palabraIngresada = prompt("Ingrese palabra a procesar");
+      console.log(comprobarFrase(frase, palabraIngresada));
+    </script>
+  </body>
+</html>

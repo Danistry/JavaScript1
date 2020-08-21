@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ACT1</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function palabras(texto) {
+        let i = 0;
+        let caracter = 0;
+        let espacios = 0;
+        let a = "";
+        while (texto[i] != ".") {
+          while (texto[i] == " ") {
+            i++;
+          }
+          a += " ";
+          espacios = 0;
+          while (texto[i] != " " && texto[i] != ".") {
+            a = a + texto[i];
+            i++;
+            espacios++;
+          }
+          if (espacios > 0) {
+            caracter++;
+          }
+        }
+        return a;
+      }
+      console.log(palabras("Hola Amigo."));
+    </script>
+  </body>
+</html>

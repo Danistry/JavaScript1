@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividad 9</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function palabraLarga(frase) {
+        let i = 0;
+        let Max = 0;
+        while (frase[i] != ".") {
+          while (frase[i] == " ") {
+            i++;
+          }
+          let word = "";
+          while (frase[i] != " " && frase[i] != ".") {
+            word += frase[i];
+            i++;
+          }
+          var wordMAX = "";
+          if (word.length > Max) {
+            wordMAX = word;
+            Max = wordMAX.length;
+          }
+        }
+        return wordMAX;
+      }
+      console.log(
+        palabraLarga(
+          "Esta frase es para testaear este algoritmo leerlo y, analizarlo."
+        )
+      );
+    </script>
+  </body>
+</html>

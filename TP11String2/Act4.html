@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividad 4</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function contarDiptongo(frase) {
+        function inVocales(letra) {
+          let i = 0;
+          const vocales = "aAáÁeEéÉiIíÍoOóÓuUúÚ";
+          let res;
+
+          while (i < vocales.length) {
+            if (letra == vocales[i]) {
+              res = true;
+              i = vocales.length;
+            }
+            i++;
+          }
+          return res;
+        }
+
+        let i = 0;
+        let contDip = 0;
+
+        while (i < frase.length - 1) {
+          while (frase[i] == " ") {
+            i++;
+          }
+          while (frase[i] != " " && i < frase.length - 1) {
+            if (inVocales(frase[i]) && inVocales(frase[i + 1])) {
+              contDip++;
+            }
+            i++;
+          }
+        }
+        return contDip;
+      }
+      console.log(
+        "Hay un total de: " +
+          contarDiptongo("hoy vamos a caer, bailar y escuchar una cancion.") +
+          " diptongos"
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Act7</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function comprobarCaracter(frase, caracter) {
+        var i = 0;
+        var res;
+        while (frase[i] != ".") {
+          while (frase[i] == " ") {
+            i++;
+          }
+          res = "";
+          if (frase[i] == caracter) {
+            res = "El caracter se hayo la posicion: " + i;
+            return res;
+          }
+          i++;
+        }
+        if (res === "") {
+          return 0;
+        }
+      }
+      var valor = comprobarCaracter(
+        prompt("Ingrese una frase"),
+        prompt("Ingrese el caracter")
+      );
+      while (valor !== 0) {
+        console.log(valor);
+        valor = comprobarCaracter(
+          prompt("Ingrese una frase"),
+          prompt("Ingrese el caracter")
+        );
+      }
+    </script>
+  </body>
+</html>
