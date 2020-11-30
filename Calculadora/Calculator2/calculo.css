@@ -1,0 +1,60 @@
+body{
+	background-image: url(imagenes/background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+/*Bordes y color de la calculadora*/
+
+.calculadora{
+	border: 3px inset beige;
+	width: 350px;
+	text-align: center;
+	background-color: cadetblue;
+
+}
+
+#calculadora{
+	margin-left: 375px;
+	margin-top: 30px;
+}
+
+/*Pantalla de visualizacion: bordes posicion, color, estilo*/
+
+
+#textoPantalla{
+	width: 300px;
+	border: 2px inset antiquewhite;
+	text-align: right;
+	font-weight: bold;
+	position: relative;
+	left: 18px;
+	padding: 0px 5px;
+	background-color: azure;
+	font-family: 'Lucida COnsole', Courier, monospace;
+	overflow: hidden;
+}
+
+/*Botonones normales: ancho y margen;*/
+
+.calculadora [type=button]{
+	background-color: transparent;
+    border: 2px solid gray;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+/*botones esenciales*/
+.calculadora input.largo{
+	color: crimson;
+	width: 100px;
+	text-align: center;
+	color: black;
+	background-color: rgb(110,245,100);
+	
+}
